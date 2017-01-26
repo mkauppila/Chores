@@ -75,6 +75,7 @@
 		476F2BE21E3A653200CA6712 /* Chores */ = {
 			isa = PBXGroup;
 			children = (
+				476F2C031E3A6AC300CA6712 /* ChoresList */,
 				476F2BE31E3A653200CA6712 /* AppDelegate.swift */,
 				476F2BE51E3A653200CA6712 /* ViewController.swift */,
 				476F2BEA1E3A653200CA6712 /* Assets.xcassets */,
@@ -91,6 +92,13 @@
 				476F2BFA1E3A653200CA6712 /* Info.plist */,
 			);
 			path = ChoresTests;
+			sourceTree = "<group>";
+		};
+		476F2C031E3A6AC300CA6712 /* ChoresList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ChoresList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,14 +227,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		476F2BE71E3A653200CA6712 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				476F2BE81E3A653200CA6712 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
