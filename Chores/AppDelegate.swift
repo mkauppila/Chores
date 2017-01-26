@@ -8,17 +8,6 @@
 
 import UIKit
 
-// 
-
-class ChoresListNavigator {
-    var rootNavigator: RootNavigator?
-
-    func presentFrom(window: UIWindow) {
-        let vc = ViewController()
-        rootNavigator?.showRoot(viewController: vc, inWindow: window)
-    }
-}
-
 //
 
 class AppDependencies {
@@ -36,6 +25,16 @@ class AppDependencies {
 
         choresListNavigator = ChoresListNavigator()
         choresListNavigator?.rootNavigator = rootNavigator
+
+        // TODO: Make sure to break the circular references
+        let choresListInteractor = ChoresListInteractor()
+        let choresListPresenter = ChoresListPresenter()
+
+        choresListPresenter.interactor = choresListInteractor
+        choresListPresenter.navigator = choresListNavigator
+
+        choresListInteractor.output = choresListPresenter
+        choresListNavigator?.presenter = choresListPresenter
     }
 }
 
@@ -61,13 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow()
 
+        window = UIWindow()
         if let window = window {
             dependencies = AppDependencies()
             dependencies.createDependencies()
             dependencies.installRootViewControllerTo(window: window)
         }
+
 
         return true
     }

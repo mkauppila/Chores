@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE31E3A653200CA6712 /* AppDelegate.swift */; };
-		476F2BE61E3A653200CA6712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE51E3A653200CA6712 /* ViewController.swift */; };
+		476F2BE61E3A653200CA6712 /* ChoresListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE51E3A653200CA6712 /* ChoresListViewController.swift */; };
 		476F2BEB1E3A653200CA6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEA1E3A653200CA6712 /* Assets.xcassets */; };
 		476F2BEE1E3A653200CA6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */; };
 		476F2BF91E3A653200CA6712 /* ChoresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BF81E3A653200CA6712 /* ChoresTests.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		476F2BE01E3A653200CA6712 /* Chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F2BE31E3A653200CA6712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		476F2BE51E3A653200CA6712 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		476F2BE51E3A653200CA6712 /* ChoresListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoresListViewController.swift; sourceTree = "<group>"; };
 		476F2BEA1E3A653200CA6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		476F2BED1E3A653200CA6712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476F2BEF1E3A653200CA6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,9 +75,8 @@
 		476F2BE21E3A653200CA6712 /* Chores */ = {
 			isa = PBXGroup;
 			children = (
-				476F2C031E3A6AC300CA6712 /* ChoresList */,
 				476F2BE31E3A653200CA6712 /* AppDelegate.swift */,
-				476F2BE51E3A653200CA6712 /* ViewController.swift */,
+				476F2BE51E3A653200CA6712 /* ChoresListViewController.swift */,
 				476F2BEA1E3A653200CA6712 /* Assets.xcassets */,
 				476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */,
 				476F2BEF1E3A653200CA6712 /* Info.plist */,
@@ -92,13 +91,6 @@
 				476F2BFA1E3A653200CA6712 /* Info.plist */,
 			);
 			path = ChoresTests;
-			sourceTree = "<group>";
-		};
-		476F2C031E3A6AC300CA6712 /* ChoresList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ChoresList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				476F2BE61E3A653200CA6712 /* ViewController.swift in Sources */,
+				476F2BE61E3A653200CA6712 /* ChoresListViewController.swift in Sources */,
 				476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
