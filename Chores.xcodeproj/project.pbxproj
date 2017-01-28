@@ -12,6 +12,7 @@
 		476F2BEB1E3A653200CA6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEA1E3A653200CA6712 /* Assets.xcassets */; };
 		476F2BEE1E3A653200CA6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */; };
 		476F2BF91E3A653200CA6712 /* ChoresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BF81E3A653200CA6712 /* ChoresTests.swift */; };
+		476F2C051E3CA4AD00CA6712 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2C041E3CA4AD00CA6712 /* ItemCell.swift */; };
 		476F2C0A1E3CD41000CA6712 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 476F2C071E3CD24500CA6712 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		476F2BF41E3A653200CA6712 /* ChoresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F2BF81E3A653200CA6712 /* ChoresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoresTests.swift; sourceTree = "<group>"; };
 		476F2BFA1E3A653200CA6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476F2C041E3CA4AD00CA6712 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		476F2C071E3CD24500CA6712 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				476F2BE31E3A653200CA6712 /* AppDelegate.swift */,
 				476F2BE51E3A653200CA6712 /* ChoresListViewController.swift */,
+				476F2C041E3CA4AD00CA6712 /* ItemCell.swift */,
 				476F2BEA1E3A653200CA6712 /* Assets.xcassets */,
 				476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */,
 				476F2BEF1E3A653200CA6712 /* Info.plist */,
@@ -223,6 +226,7 @@
 			files = (
 				476F2BE61E3A653200CA6712 /* ChoresListViewController.swift in Sources */,
 				476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */,
+				476F2C051E3CA4AD00CA6712 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
