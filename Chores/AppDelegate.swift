@@ -60,14 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-
         window = UIWindow()
         if let window = window {
             dependencies = AppDependencies()
             dependencies.createDependencies()
             dependencies.installRootViewControllerTo(window: window)
         }
-
 
         return true
     }
