@@ -97,9 +97,7 @@
 				476F2BE31E3A653200CA6712 /* AppDelegate.swift */,
 				476F2BE51E3A653200CA6712 /* ChoresListViewController.swift */,
 				476F2C041E3CA4AD00CA6712 /* ItemCell.swift */,
-				476F2BEA1E3A653200CA6712 /* Assets.xcassets */,
-				476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */,
-				476F2BEF1E3A653200CA6712 /* Info.plist */,
+				47B6B12F1E466DD200788C26 /* Supporting Files */,
 			);
 			path = Chores;
 			sourceTree = "<group>";
@@ -119,6 +117,16 @@
 				476F2C071E3CD24500CA6712 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47B6B12F1E466DD200788C26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				476F2BEA1E3A653200CA6712 /* Assets.xcassets */,
+				476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */,
+				476F2BEF1E3A653200CA6712 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +438,7 @@
 				476F2BFF1E3A653200CA6712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		476F2C001E3A653200CA6712 /* Build configuration list for PBXNativeTarget "ChoresTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +447,7 @@
 				476F2C021E3A653200CA6712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
