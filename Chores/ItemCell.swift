@@ -23,37 +23,47 @@ extension UIColor {
 @IBDesignable
 class CompletionMarkView: UIView {
 
-    @IBInspectable var circleColor: UIColor
-    @IBInspectable var lineWidth: CGFloat
-    @IBInspectable var completed: Bool
-
-    override init(frame: CGRect) {
-        circleColor = UIColor.appleGray
-        lineWidth = 2.0
-        completed = false
-
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        // TODO should I implement this in order to support xibs?
-        fatalError("init(coder:) has not been implemented")
-    }
+    @IBInspectable var pathColor: UIColor = UIColor.appleGray
+    @IBInspectable var circleLineWidth: CGFloat = 2.0
+    @IBInspectable var checkmarkLineWidth: CGFloat = 5.0
+    @IBInspectable var completed: Bool = false
 
     override func draw(_ rect: CGRect) {
         if let backgroundColor = backgroundColor {
-            let circlePath = UIBezierPath(ovalIn: rect)
-
-            let shapeLayer = CAShapeLayer()
-            shapeLayer.path = circlePath.cgPath
-            shapeLayer.fillColor = backgroundColor.cgColor
-            shapeLayer.strokeColor = circleColor.cgColor
-            shapeLayer.lineWidth = lineWidth
-
-            layer.addSublayer(shapeLayer)
+            layer.addSublayer(circleLayer(rect: rect, backgroundColor: backgroundColor))
+            if completed {
+                layer.addSublayer(checkmarkLayer(rect: rect, backgroundColor: backgroundColor))
+            }
         } else {
-            print("CompletionMarkView requires a background color!")
+            assert(false, "CompletionMarkView requires a background color!")
         }
+    }
+
+    private func circleLayer(rect: CGRect, backgroundColor: UIColor) -> CALayer {
+        let circlePath = UIBezierPath(ovalIn: rect)
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = backgroundColor.cgColor
+        shapeLayer.strokeColor = pathColor.cgColor
+        shapeLayer.lineWidth = circleLineWidth
+
+        return shapeLayer
+    }
+
+    private func checkmarkLayer(rect: CGRect, backgroundColor: UIColor) -> CALayer {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: rect.width * 0.25, y: rect.height * 0.5))
+        path.addLine(to: CGPoint(x: rect.width * 0.45, y: rect.height * 0.7))
+        path.addLine(to: CGPoint(x: rect.width * 0.75, y: rect.height * 0.3))
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = backgroundColor.cgColor
+        shapeLayer.strokeColor = pathColor.cgColor
+        shapeLayer.lineWidth = checkmarkLineWidth
+
+        return shapeLayer
     }
 }
 
