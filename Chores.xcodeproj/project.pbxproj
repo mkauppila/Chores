@@ -154,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				47B6B1381E47802800788C26 /* CompletableItemTableViewCell.swift */,
-				47B6B1361E47801100788C26 /* ChoresListViewController.swift */,
 				47B6B13C1E47804B00788C26 /* CompletionMarkView.swift */,
+				47B6B1361E47801100788C26 /* ChoresListViewController.swift */,
 				47B6B13E1E47807F00788C26 /* ChoresListPresenter.swift */,
 				47B6B1401E4780A500788C26 /* ChoresListNavigator.swift */,
 				47B6B1421E4780BF00788C26 /* ChoresListInteractor.swift */,

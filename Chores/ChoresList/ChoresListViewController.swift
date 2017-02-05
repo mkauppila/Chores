@@ -11,19 +11,25 @@ import UIKit
 class ChoresListViewController: UITableViewController {
     var presenter: ChoresListPresenter? // TODO needs an protocol for testing
 
-    let reuseIdentifier = "itemCellIdentifier"
+    let completableItemTableViewCellIdentifier = "completableItemTableViewCellIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Chores"
+        self.title = NSLocalizedString("Chores", comment: "")
 
         view.backgroundColor = UIColor.white
 
-        tableView.register(CompletableItemTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(CompletableItemTableViewCell.self,
+                           forCellReuseIdentifier: completableItemTableViewCellIdentifier)
 
         tableView.delegate = self
         tableView.dataSource = self
+
+        let addChoreButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                 target: self,
+                                                 action: #selector(openAddChoreView(sender:)))
+        navigationItem.rightBarButtonItem = addChoreButtonItem
 
         enableAutoResizingCellsFor(tableView: tableView)
     }
@@ -37,13 +43,14 @@ class ChoresListViewController: UITableViewController {
         tableView.layoutIfNeeded()
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // MARK: UITableViewDelegate and UITableViewDataSource
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: completableItemTableViewCellIdentifier,
                                                     for: indexPath) as? CompletableItemTableViewCell {
             cell.setup()
             cell.accessoryTapAction = {
-                print("Accesory view tapped")
+                self.markChoreItemCompleted()
             }
             return cell
         } else {
@@ -56,6 +63,20 @@ class ChoresListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("did select view")
+        openChoreDetailsView()
+    }
+
+    // MARK: UI Actions
+
+    @objc private func openAddChoreView(sender: Any) {
+        print("Open add new chore item")
+    }
+
+    private func markChoreItemCompleted(/*this item*/) {
+        print("mark chore item completed")
+    }
+
+    private func openChoreDetailsView() {
+        print("Open details view for chore item")
     }
 }
