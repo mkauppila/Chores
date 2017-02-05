@@ -74,6 +74,14 @@ class CompletableItemTableViewCell: UITableViewCell {
     let pointsLabel = UILabel()
     let completionMarkView = CompletionMarkView()
 
+    var accessoryTapAction: () -> () = {}
+
+    @objc private func tap(recognizer: UIGestureRecognizer) {
+        completionMarkView.completed = !completionMarkView.completed
+        completionMarkView.setNeedsDisplay()
+        accessoryTapAction()
+    }
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -87,6 +95,9 @@ class CompletableItemTableViewCell: UITableViewCell {
         }
 
         completionMarkView.isUserInteractionEnabled = true
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tap(recognizer:)))
+        completionMarkView.addGestureRecognizer(recognizer)
+
 
         itemNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(snp.topMargin)
@@ -103,7 +114,7 @@ class CompletableItemTableViewCell: UITableViewCell {
         completionMarkView.snp.updateConstraints { (make) in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(snp.trailingMargin).offset(-16);
-            make.size.equalTo(CGSize(width: 32, height: 32))
+            make.size.equalTo(CGSize(width: 44, height: 44))
         }
     }
 
