@@ -68,7 +68,6 @@ class CompletionMarkView: UIView {
     }
 }
 
-// TODO rename to CompletableItemTableViewCell
 class CompletableItemTableViewCell: UITableViewCell {
     let itemNameLabel = UILabel()
     let pointsLabel = UILabel()
@@ -89,33 +88,48 @@ class CompletableItemTableViewCell: UITableViewCell {
         accessoryType = .disclosureIndicator
         // TODO Define once on nav controller level and it'll cascade?
         layoutMargins = UIEdgeInsetsMake(16.0, 12.0, 16.0, 12.0)
+        completionMarkView.backgroundColor = UIColor.white
 
         for subview in [itemNameLabel, pointsLabel, completionMarkView] as [UIView] {
             addSubview(subview)
         }
 
-        completionMarkView.isUserInteractionEnabled = true
+        addTapRecognizerTo(view: completionMarkView)
+        createLayout()
+
+        stylizeLabels()
+    }
+
+    private func addTapRecognizerTo(view: UIView) {
+        view.isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(tap(recognizer:)))
-        completionMarkView.addGestureRecognizer(recognizer)
+        view.addGestureRecognizer(recognizer)
+    }
 
-
+    private func createLayout() {
         itemNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(snp.topMargin)
             make.leading.equalTo(snp.leadingMargin)
-            make.trailing.equalTo(snp.trailingMargin).offset(-32);
+            make.trailing.equalTo(completionMarkView.snp.leading).offset(-8)
         }
 
         pointsLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(itemNameLabel.snp.bottomMargin).offset(8)
+            make.top.equalTo(itemNameLabel.snp.bottomMargin).offset(12)
             make.leading.equalTo(snp.leadingMargin)
+            make.trailing.equalTo(completionMarkView.snp.leading).offset(-8)
             make.bottom.equalTo(snp.bottomMargin)
         }
 
         completionMarkView.snp.updateConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.trailing.equalTo(snp.trailingMargin).offset(-16);
+            make.trailing.equalTo(snp.trailingMargin).offset(-16)
             make.size.equalTo(CGSize(width: 44, height: 44))
         }
+    }
+
+    private func stylizeLabels() {
+        itemNameLabel.font = UIFont.systemFont(ofSize: 22.0)
+        pointsLabel.font = UIFont.italicSystemFont(ofSize: 14)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -123,8 +137,7 @@ class CompletableItemTableViewCell: UITableViewCell {
     }
 
     func setup() {
-        itemNameLabel.text = "Hello"
-        pointsLabel.text = "world!"
-        completionMarkView.backgroundColor = UIColor.white
+        itemNameLabel.text = "Reorganize kitchen cabinets"
+        pointsLabel.text = "10.000 points!"
     }
 }
