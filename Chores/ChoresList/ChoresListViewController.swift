@@ -8,28 +8,6 @@
 
 import UIKit
 
-class ChoresListNavigator {
-    var rootNavigator: RootNavigator?
-    var presenter: ChoresListPresenter?
-
-    func presentFrom(window: UIWindow) {
-        let viewController = ChoresListViewController()
-        viewController.presenter = presenter
-        presenter?.viewController = viewController
-        rootNavigator?.showRoot(viewController: viewController, inWindow: window)
-    }
-}
-
-class ChoresListInteractor {
-    weak var output: ChoresListPresenter?
-}
-
-class ChoresListPresenter {
-    var viewController: ChoresListViewController? // TODO: needs an interface for better testing support
-    var interactor: ChoresListInteractor?
-    var navigator: ChoresListNavigator?
-}
-
 class ChoresListViewController: UITableViewController {
     var presenter: ChoresListPresenter? // TODO needs an protocol for testing
 
@@ -50,7 +28,7 @@ class ChoresListViewController: UITableViewController {
         enableAutoResizingCellsFor(tableView: tableView)
     }
 
-    func enableAutoResizingCellsFor(tableView: UITableView) {
+    private func enableAutoResizingCellsFor(tableView: UITableView) {
          //http://candycode.io/automatically-resizing-uitableviewcells-with-dynamic-text-height-using-auto-layout/
         tableView.estimatedRowHeight = 132.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -64,6 +42,9 @@ class ChoresListViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
                                                     for: indexPath) as? CompletableItemTableViewCell {
             cell.setup()
+            cell.accessoryTapAction = {
+                print("Accesory view tapped")
+            }
             return cell
         } else {
             return UITableViewCell()
@@ -72,11 +53,6 @@ class ChoresListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3;
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        print("Accessory tapped")
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

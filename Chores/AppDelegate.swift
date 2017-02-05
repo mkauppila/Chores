@@ -8,8 +8,6 @@
 
 import UIKit
 
-//
-
 class AppDependencies {
 
     private var choresListNavigator: ChoresListNavigator?
