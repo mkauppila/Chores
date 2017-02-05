@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 // TODO: https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
+// TODO: WTF CAShapeLayer?
 
 extension UIColor {
     class var appleGray: UIColor {
@@ -68,7 +69,7 @@ class CompletionMarkView: UIView {
 }
 
 // TODO rename to CompletableItemTableViewCell
-class ItemCell: UITableViewCell {
+class CompletableItemTableViewCell: UITableViewCell {
     let itemNameLabel = UILabel()
     let pointsLabel = UILabel()
     let completionMarkView = CompletionMarkView()

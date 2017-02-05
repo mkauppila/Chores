@@ -42,7 +42,7 @@ class ChoresListViewController: UITableViewController {
 
         view.backgroundColor = UIColor.white
 
-        tableView.register(ItemCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(CompletableItemTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -62,7 +62,7 @@ class ChoresListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
-                                                    for: indexPath) as? ItemCell {
+                                                    for: indexPath) as? CompletableItemTableViewCell {
             cell.setup()
             return cell
         } else {
