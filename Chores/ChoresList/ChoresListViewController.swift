@@ -48,9 +48,11 @@ class ChoresListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: completableItemTableViewCellIdentifier,
                                                     for: indexPath) as? CompletableItemTableViewCell {
-            cell.setup()
-            cell.accessoryTapAction = {
-                self.markChoreItemCompleted()
+            if let item = presenter?.itemAtIndexPath(indexPath: indexPath) {
+                cell.setup(withItem: item)
+                cell.accessoryTapAction = {
+                    self.markChoreItemCompleted()
+                }
             }
             return cell
         } else {
@@ -59,7 +61,7 @@ class ChoresListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return presenter?.numberOfItems() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

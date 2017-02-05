@@ -12,4 +12,17 @@ class ChoresListPresenter {
     var viewController: ChoresListViewController? // TODO: needs an interface for better testing support
     var interactor: ChoresListInteractor?
     var navigator: ChoresListNavigator?
+
+    func itemAtIndexPath(indexPath: IndexPath) -> ChoreItem? {
+        if let items = interactor?.allChoreItems(),
+           indexPath.row < items.count {
+            return items[indexPath.row]
+        } else {
+            return nil
+        }
+    }
+
+    func numberOfItems() -> Int {
+        return interactor?.allChoreItems().count ?? 0
+    }
 }

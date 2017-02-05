@@ -80,8 +80,9 @@ class CompletableItemTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup() {
-        itemNameLabel.text = "Reorganize kitchen cabinets"
-        pointsLabel.text = "10.000 points!"
+    func setup(withItem item: ChoreItem) {
+        itemNameLabel.text = item.name
+        pointsLabel.text = "\(item.points) points!"
+        completionMarkView.completed = item.completed
     }
 }
