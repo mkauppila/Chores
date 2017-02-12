@@ -18,18 +18,9 @@ class ChoreDetailNavigator {
     private func viewController() -> UIViewController {
         let viewController = ChoresListViewController()
         return viewController
-//        viewController.presenter = presenter
-//        presenter?.viewController = viewController
-//        rootNavigator?.showRoot(viewController: viewController, inWindow: window)
     }
 
     func presentChoreDetails() {
-
         rootNavigator?.navigateTo(viewController: viewController(), withAnimation: true)
-
-//        let navigationController = rootNavigator?.defaultNavigationController()
-//        navigationController?.pushViewController(viewController(), animated: true)
-        // Create the view controller and all that shit!
-        // view controller needs to have reference to the navigation controller
     }
 }

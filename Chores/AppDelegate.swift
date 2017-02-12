@@ -21,7 +21,7 @@ class AppDependencies {
     }
 
     func createDependencies() {
-        let rootNavigator = RootNavigator()
+        let rootNavigator = RootNavigator(forWindow: window)
 
         choresListNavigator = ChoresListNavigator()
         choresListNavigator?.rootNavigator = rootNavigator
@@ -40,12 +40,14 @@ class AppDependencies {
 
 // Creates the root navigator for all the other navigators
 class RootNavigator {
-    private var window: UIWindow?
+    private let window: UIWindow
+
+    init(forWindow window: UIWindow) {
+        self.window = window
+    }
 
     // Show the initial view controller
-    func showRoot(viewController controller: UIViewController, inWindow window: UIWindow) {
-        self.window = window
-
+    func showRoot(viewController controller: UIViewController) {
         let navigationController = UINavigationController(rootViewController: controller)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
@@ -55,11 +57,10 @@ class RootNavigator {
         return window.rootViewController as? UINavigationController
     }
 
-    // MARK: 
+    // MARK: Navigation Support
 
     func navigateTo(viewController: UIViewController, withAnimation animation: Bool) {
-        if let window = window,
-           let navController = navigationControllerFrom(window: window) {
+        if let navController = navigationControllerFrom(window: window) {
             navController.pushViewController(viewController, animated: animation)
         }
     }
