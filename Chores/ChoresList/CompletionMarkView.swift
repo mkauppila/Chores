@@ -18,6 +18,7 @@ class CompletionMarkView: UIView {
 
     override func draw(_ rect: CGRect) {
         if let backgroundColor = backgroundColor {
+            // TODO: Refactor the circle and checkmark into single layer
             layer.addSublayer(circleLayer(rect: rect, backgroundColor: backgroundColor))
             if completed {
                 layer.addSublayer(checkmarkLayer(rect: rect, backgroundColor: backgroundColor))
