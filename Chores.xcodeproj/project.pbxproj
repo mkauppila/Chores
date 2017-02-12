@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */; };
 		476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE31E3A653200CA6712 /* AppDelegate.swift */; };
 		476F2BEB1E3A653200CA6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEA1E3A653200CA6712 /* Assets.xcassets */; };
 		476F2BEE1E3A653200CA6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsNavigator.swift; path = ChoreDetails/ChoreDetailsNavigator.swift; sourceTree = "<group>"; };
 		476F2BE01E3A653200CA6712 /* Chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F2BE31E3A653200CA6712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476F2BEA1E3A653200CA6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472D90801E50570600951D89 /* ChoreDetails */ = {
+			isa = PBXGroup;
+			children = (
+				472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */,
+			);
+			name = ChoreDetails;
+			sourceTree = "<group>";
+		};
 		476F2BD71E3A653200CA6712 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			children = (
 				47B6B1321E477EDC00788C26 /* Common */,
 				47B6B1351E47800700788C26 /* ChoresList */,
+				472D90801E50570600951D89 /* ChoreDetails */,
 				476F2BE31E3A653200CA6712 /* AppDelegate.swift */,
 				47B6B1301E472F5B00788C26 /* InstantRender.xib */,
 				47B6B12F1E466DD200788C26 /* Supporting Files */,
@@ -268,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B6B1431E4780BF00788C26 /* ChoresListInteractor.swift in Sources */,
+				472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */,
 				47B6B1371E47801100788C26 /* ChoresListViewController.swift in Sources */,
 				47B6B1341E477F1800788C26 /* UIColor+colors.swift in Sources */,
 				47B6B13F1E47807F00788C26 /* ChoresListPresenter.swift in Sources */,

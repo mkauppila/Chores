@@ -9,12 +9,14 @@
 import UIKit
 
 class AppDependencies {
-
+    private let window: UIWindow
     private var choresListNavigator: ChoresListNavigator?
 
-    func installRootViewControllerTo(window: UIWindow) {
-        // use the navigator of the first class
-        // choresListNavigator.presentFromWindow(window)
+    init(toWindow window: UIWindow) {
+        self.window = window
+    }
+
+    func installRootViewControllerToWindow() {
         choresListNavigator?.presentFrom(window: window)
     }
 
@@ -38,7 +40,12 @@ class AppDependencies {
 
 // Creates the root navigator for all the other navigators
 class RootNavigator {
+    private var window: UIWindow?
+
+    // Show the initial view controller
     func showRoot(viewController controller: UIViewController, inWindow window: UIWindow) {
+        self.window = window
+
         let navigationController = UINavigationController(rootViewController: controller)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
@@ -46,6 +53,15 @@ class RootNavigator {
 
     private func navigationControllerFrom(window: UIWindow) -> UINavigationController? {
         return window.rootViewController as? UINavigationController
+    }
+
+    // MARK: 
+
+    func navigateTo(viewController: UIViewController, withAnimation animation: Bool) {
+        if let window = window,
+           let navController = navigationControllerFrom(window: window) {
+            navController.pushViewController(viewController, animated: animation)
+        }
     }
 }
 
@@ -60,9 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow()
         if let window = window {
-            dependencies = AppDependencies()
+            dependencies = AppDependencies(toWindow: window)
             dependencies.createDependencies()
-            dependencies.installRootViewControllerTo(window: window)
+            dependencies.installRootViewControllerToWindow()
         }
 
         return true

@@ -25,4 +25,12 @@ class ChoresListPresenter {
     func numberOfItems() -> Int {
         return interactor?.allChoreItems().count ?? 0
     }
+
+    // MARK: On UI Actions
+
+    func onOpenAddChoreView() {
+        // ChoreDetailViewNavigator.navigate()
+        navigator?.navigateToChoreDetails()
+    }
+
 }

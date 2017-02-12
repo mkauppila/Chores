@@ -72,6 +72,7 @@ class ChoresListViewController: UITableViewController {
 
     @objc private func openAddChoreView(sender: Any) {
         print("Open add new chore item")
+        presenter?.onOpenAddChoreView()
     }
 
     private func markChoreItemCompleted(/*this item*/) {

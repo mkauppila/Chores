@@ -18,4 +18,10 @@ class ChoresListNavigator {
         presenter?.viewController = viewController
         rootNavigator?.showRoot(viewController: viewController, inWindow: window)
     }
+
+    func navigateToChoreDetails() {
+
+        let navigator = ChoreDetailNavigator(rootNavigator: rootNavigator!)
+        navigator.presentChoreDetails()
+    }
 }
