@@ -78,9 +78,11 @@ class ChoresListViewController: UITableViewController {
 
     private func markChoreItemCompleted(/*this item*/) {
         print("mark chore item completed")
+        presenter?.onMarkChoreItemCompleted()
     }
 
     private func openChoreDetailsView() {
         print("Open details view for chore item")
+        presenter?.onOpenChoreDetailsView()
     }
 }

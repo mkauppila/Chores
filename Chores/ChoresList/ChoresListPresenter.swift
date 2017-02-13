@@ -32,4 +32,11 @@ class ChoresListPresenter {
         navigator?.navigateToChoreDetails()
     }
 
+    func onMarkChoreItemCompleted() {
+
+    }
+
+    func onOpenChoreDetailsView() {
+
+    }
 }
