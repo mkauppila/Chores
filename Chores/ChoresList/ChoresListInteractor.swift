@@ -9,7 +9,7 @@
 import UIKit
 
 class ChoresListInteractor {
-    weak var output: ChoresListPresenter?
+    weak var presenter: ChoresListPresenter?
 
     private var choreItems = [
         ChoreItem(id: 1, name: "Reorganize kitchen cabinets", points: 150, completed: false),

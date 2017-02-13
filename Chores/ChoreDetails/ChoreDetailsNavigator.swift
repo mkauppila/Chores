@@ -9,19 +9,19 @@
 import UIKit
 
 class ChoreDetailsNavigator {
-    let rootNavigator: RootNavigator?
+    let rootNavigator: RootNavigator
 
     init(rootNavigator: RootNavigator) {
         self.rootNavigator = rootNavigator
     }
 
     private func viewController() -> UIViewController {
-        let viewController = ChoreDetailsViewController()
-        
-        return viewController
+//        let viewController = ChoreDetailsViewController(presenter: ChoreDetailsPresenter())
+//        return viewController
+        return UIViewController()
     }
 
     func presentChoreDetails() {
-        rootNavigator?.navigateTo(viewController: viewController(), withAnimation: true)
+        rootNavigator.navigateTo(viewController: viewController(), withAnimation: true)
     }
 }

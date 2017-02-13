@@ -17,23 +17,20 @@ class AppDependencies {
     }
 
     func installRootViewControllerToWindow() {
+        let rootNavigator = RootNavigator(forWindow: window)
+
+        choresListNavigator = ChoresListNavigator(withRootNavigator: rootNavigator)
+
+
         choresListNavigator?.presentFrom(window: window)
     }
 
     func createDependencies() {
-        let rootNavigator = RootNavigator(forWindow: window)
 
-        choresListNavigator = ChoresListNavigator()
-        choresListNavigator?.rootNavigator = rootNavigator
+        // Chores List
 
         // TODO: Make sure to break the circular references
-        let choresListInteractor = ChoresListInteractor()
-        let choresListPresenter = ChoresListPresenter()
+        
 
-        choresListPresenter.interactor = choresListInteractor
-        choresListPresenter.navigator = choresListNavigator
-
-        choresListInteractor.output = choresListPresenter
-        choresListNavigator?.presenter = choresListPresenter
     }
 }
