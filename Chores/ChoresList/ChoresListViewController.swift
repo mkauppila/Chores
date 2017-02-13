@@ -9,10 +9,8 @@
 import UIKit
 
 
-// TODO: Protocol for presenter, generalize onViewDidLoad and so on.
-
 class ChoresListViewController: UITableViewController {
-    var presenter: ChoresListPresenter? // TODO: needs an protocol for testing
+    var presenter: ChoresListPresenter?
 
     let completableItemTableViewCellIdentifier = "completableItemTableViewCellIdentifier"
 

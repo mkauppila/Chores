@@ -38,7 +38,6 @@ class AppDependencies {
     }
 }
 
-// Creates the root navigator for all the other navigators
 class RootNavigator {
     private let window: UIWindow
 
@@ -46,7 +45,6 @@ class RootNavigator {
         self.window = window
     }
 
-    // Show the initial view controller
     func showRoot(viewController controller: UIViewController) {
         let navigationController = UINavigationController(rootViewController: controller)
         window.rootViewController = navigationController

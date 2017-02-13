@@ -9,7 +9,7 @@
 import Foundation
 
 class ChoresListPresenter {
-    var viewController: ChoresListViewController? // TODO: needs an interface for better testing support
+    var viewController: ChoresListViewController?
     var interactor: ChoresListInteractor?
     var navigator: ChoresListNavigator?
 
@@ -29,7 +29,6 @@ class ChoresListPresenter {
     // MARK: On UI Actions
 
     func onOpenAddChoreView() {
-        // ChoreDetailViewNavigator.navigate()
         navigator?.navigateToChoreDetails()
     }
 

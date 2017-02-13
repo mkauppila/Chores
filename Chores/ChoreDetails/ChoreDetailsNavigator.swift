@@ -15,7 +15,6 @@ class ChoreDetailsNavigator {
         self.rootNavigator = rootNavigator
     }
 
-
     private func viewController() -> UIViewController {
         let viewController = ChoreDetailsViewController()
         

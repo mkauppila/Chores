@@ -9,9 +9,6 @@
 import UIKit
 import SnapKit
 
-// TODO: https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
-// TODO: WTF CAShapeLayer?
-
 class CompletableItemTableViewCell: UITableViewCell {
     let itemNameLabel = UILabel()
     let pointsLabel = UILabel()
@@ -30,7 +27,7 @@ class CompletableItemTableViewCell: UITableViewCell {
 
         selectionStyle = .none
         accessoryType = .disclosureIndicator
-        // TODO Define once on nav controller level and it'll cascade?
+        // TODO: Define once on nav controller level and it'll cascade?
         layoutMargins = UIEdgeInsetsMake(16.0, 12.0, 16.0, 12.0)
         completionMarkView.backgroundColor = UIColor.white
 
