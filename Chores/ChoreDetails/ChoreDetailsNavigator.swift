@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ChoreDetailNavigator {
+class ChoreDetailsNavigator {
     let rootNavigator: RootNavigator?
 
     init(rootNavigator: RootNavigator) {
         self.rootNavigator = rootNavigator
     }
 
+
     private func viewController() -> UIViewController {
-        let viewController = ChoresListViewController()
+        let viewController = ChoreDetailsViewController()
+        
         return viewController
     }
 

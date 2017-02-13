@@ -21,7 +21,7 @@ class ChoresListNavigator {
 
     func navigateToChoreDetails() {
 
-        let navigator = ChoreDetailNavigator(rootNavigator: rootNavigator!)
+        let navigator = ChoreDetailsNavigator(rootNavigator: rootNavigator!)
         navigator.presentChoreDetails()
     }
 }

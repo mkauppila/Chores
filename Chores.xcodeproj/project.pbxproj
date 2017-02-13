@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */; };
+		472D90841E5217E400951D89 /* ChoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */; };
+		472D90861E52196A00951D89 /* ChoreDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90851E52196A00951D89 /* ChoreDetailsPresenter.swift */; };
+		472D90881E52197C00951D89 /* ChoreDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90871E52197C00951D89 /* ChoreDetailsInteractor.swift */; };
 		476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE31E3A653200CA6712 /* AppDelegate.swift */; };
 		476F2BEB1E3A653200CA6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEA1E3A653200CA6712 /* Assets.xcassets */; };
 		476F2BEE1E3A653200CA6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsNavigator.swift; path = ChoreDetails/ChoreDetailsNavigator.swift; sourceTree = "<group>"; };
+		472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsViewController.swift; path = ChoreDetails/ChoreDetailsViewController.swift; sourceTree = "<group>"; };
+		472D90851E52196A00951D89 /* ChoreDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsPresenter.swift; path = ChoreDetails/ChoreDetailsPresenter.swift; sourceTree = "<group>"; };
+		472D90871E52197C00951D89 /* ChoreDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsInteractor.swift; path = ChoreDetails/ChoreDetailsInteractor.swift; sourceTree = "<group>"; };
 		476F2BE01E3A653200CA6712 /* Chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F2BE31E3A653200CA6712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476F2BEA1E3A653200CA6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */,
+				472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */,
+				472D90851E52196A00951D89 /* ChoreDetailsPresenter.swift */,
+				472D90871E52197C00951D89 /* ChoreDetailsInteractor.swift */,
 			);
 			name = ChoreDetails;
 			sourceTree = "<group>";
@@ -284,9 +293,12 @@
 				47B6B1341E477F1800788C26 /* UIColor+colors.swift in Sources */,
 				47B6B13F1E47807F00788C26 /* ChoresListPresenter.swift in Sources */,
 				47B6B1411E4780A500788C26 /* ChoresListNavigator.swift in Sources */,
+				472D90841E5217E400951D89 /* ChoreDetailsViewController.swift in Sources */,
 				476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */,
 				47B6B1391E47802800788C26 /* CompletableItemTableViewCell.swift in Sources */,
+				472D90881E52197C00951D89 /* ChoreDetailsInteractor.swift in Sources */,
 				47B6B13D1E47804B00788C26 /* CompletionMarkView.swift in Sources */,
+				472D90861E52196A00951D89 /* ChoreDetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
