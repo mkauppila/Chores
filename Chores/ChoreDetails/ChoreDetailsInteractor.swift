@@ -9,6 +9,6 @@
 import Foundation
 
 class ChoreDetailsInteractor {
-    var presenter: ChoreDetailsPresenter?
+    weak var presenter: ChoreDetailsPresenter?
 
 }
