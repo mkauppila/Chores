@@ -15,13 +15,24 @@ class ChoreDetailsNavigator {
         self.rootNavigator = rootNavigator
     }
 
-    private func viewController() -> UIViewController {
-//        let viewController = ChoreDetailsViewController(presenter: ChoreDetailsPresenter())
-//        return viewController
-        return UIViewController()
+    private func wireUpChoreDetails() -> ChoreDetailsViewController {
+        let viewController = ChoreDetailsViewController()
+
+        let presenter = ChoreDetailsPresenter(viewController: viewController)
+        let interactor = ChoreDetailsInteractor()
+
+        viewController.presenter = presenter
+
+        presenter.navigator = self
+        presenter.interactor = interactor
+
+        interactor.presenter = presenter
+
+        return viewController
     }
 
     func presentChoreDetails() {
-        rootNavigator.navigateTo(viewController: viewController(), withAnimation: true)
+        rootNavigator.navigateTo(viewController: wireUpChoreDetails(),
+                                 withAnimation: true)
     }
 }

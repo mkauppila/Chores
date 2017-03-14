@@ -9,7 +9,11 @@
 import Foundation
 
 class ChoreDetailsPresenter {
-    var viewController: ChoreDetailsViewController?
+    var viewController: ChoreDetailsViewController
     var interactor: ChoreDetailsInteractor?
     var navigator: ChoreDetailsNavigator?
+
+    init(viewController: ChoreDetailsViewController) {
+        self.viewController = viewController
+    }
 }
