@@ -12,43 +12,98 @@ import SnapKit
 class ChoreDetailsViewController: UIViewController {
     var presenter: ChoreDetailsPresenter?
 
+    enum Constants {
+        static let addButtonTitle = "Add chore!"
+        static let viewTitle = NSLocalizedString("Chore details", comment: "")
+        static let viewBackgroundColor = UIColor.white
+        static let nameLabelTitle = "Name:"
+        static let nameTextFieldPlaceholder = "name"
+        static let pointsLabelTitle = "Points:"
+        static let pointsTextFieldPlaceholder = "200"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = NSLocalizedString("Chore details", comment: "")
-        view.backgroundColor = UIColor.white
-
-        //self.automaticallyAdjustsScrollViewInsets = false
-        //self.extendedLayoutIncludesOpaqueBars = true
 
         setupView()
         setupViewLayout()
     }
 
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.nameLabelTitle
+        return label
+    }()
 
-    let stackView = UIStackView()
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = Constants.nameTextFieldPlaceholder
+        return textField
+    }()
 
-    // but now all the views are created when the controller is initiliazed
-    let label = UILabel()
+    let pointsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.pointsLabelTitle
+        return label
+    }()
+
+    let pointsTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = Constants.pointsTextFieldPlaceholder
+        return textField
+    }()
+
+    let addButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(Constants.addButtonTitle, for: .normal)
+        return button
+    }()
 
     func setupView() {
-        stackView.axis = UILayoutConstraintAxis.horizontal
-        stackView.alignment = UIStackViewAlignment.top
-        stackView.distribution = UIStackViewDistribution.equalCentering
-        stackView.spacing = 10.0
-        view.addSubview(stackView)
+        title = Constants.viewTitle
+        view.backgroundColor = Constants.viewBackgroundColor
 
-        label.text = "hello world"
-        label.backgroundColor = UIColor.red
-        stackView.addArrangedSubview(label)
+        view.addSubview(nameLabel)
+        view.addSubview(nameTextField)
+        view.addSubview(pointsLabel)
+        view.addSubview(pointsTextField)
+        view.addSubview(addButton)
     }
 
     func setupViewLayout() {
-        // This should probably be generalized into a base view controller
-        self.view.layoutMargins = UIEdgeInsetsMake(44.0 + 20.0 + 16.0, 12.0, 16.0, 12.0)
+        // This should probably be generalized into a base view controller??
+        view.layoutMargins = UIEdgeInsetsMake(44.0 + 20.0 + 16.0, 12.0, 16.0, 12.0)
+        // Snapkit doesn't support layout margins? Or doesn't support top properly?
 
-        stackView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view.layoutMargins) //.inset(UIEdgeInsetsMake(16, 16, 16, 16))
+        nameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.topMargin).offset(64 + 12)
+            make.leading.equalTo(view.snp.leadingMargin)
+            make.trailing.equalTo(view.snp.trailingMargin)
+        }
+
+        nameTextField.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottomMargin).offset(12)
+            make.leading.equalTo(nameLabel)
+            make.trailing.equalTo(nameLabel)
+        }
+
+        pointsLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottomMargin).offset(12)
+            make.leading.equalTo(nameLabel)
+            make.trailing.equalTo(nameLabel)
+        }
+
+        pointsTextField.snp.makeConstraints { make in
+            make.top.equalTo(pointsLabel.snp.bottomMargin).offset(12)
+            make.leading.equalTo(nameLabel)
+            make.trailing.equalTo(nameLabel)
+        }
+
+        addButton.snp.makeConstraints { make in
+            make.top.equalTo(pointsTextField.snp.bottomMargin).offset(12)
+            make.leading.equalTo(nameLabel)
+            make.trailing.equalTo(nameLabel)
         }
     }
 }
+
