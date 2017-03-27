@@ -29,6 +29,8 @@ class ChoreDetailsViewController: UIViewController {
         setupViewLayout()
     }
 
+    // MARK: View Handling
+
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.nameLabelTitle
@@ -56,6 +58,9 @@ class ChoreDetailsViewController: UIViewController {
     let addButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle(Constants.addButtonTitle, for: .normal)
+        button.addTarget(self,
+                         action: #selector(addChoreItemAction(sender:)),
+                         for: .touchUpInside)
         return button
     }()
 
@@ -104,6 +109,12 @@ class ChoreDetailsViewController: UIViewController {
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
         }
+    }
+
+    // MARK: UI Actions
+
+    @objc private func addChoreItemAction(sender: Any) {
+        presenter?.addChoreItem(named: "hello", points: "akk")
     }
 }
 

@@ -16,4 +16,14 @@ class ChoreDetailsPresenter {
     init(viewController: ChoreDetailsViewController) {
         self.viewController = viewController
     }
+
+    func addChoreItem(named: String, points pointsString: String) {
+        if let points = Int(pointsString) {
+            interactor?.addChoreItem(named: named, points: points)
+        } else {
+            // TODO:
+            // do some error handling, or don't let user to input anything else
+            // than integers
+        }
+    }
 }

@@ -21,7 +21,6 @@ class AppDependencies {
 
         choresListNavigator = ChoresListNavigator(withRootNavigator: rootNavigator)
 
-
         choresListNavigator?.presentFrom(window: window)
     }
 

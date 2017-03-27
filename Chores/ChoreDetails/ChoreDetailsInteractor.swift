@@ -11,4 +11,7 @@ import Foundation
 class ChoreDetailsInteractor {
     weak var presenter: ChoreDetailsPresenter?
 
+    func addChoreItem(named: String, points: Int) {
+        // TODO: talk with chore item store for handling the persistance and all
+    }
 }
