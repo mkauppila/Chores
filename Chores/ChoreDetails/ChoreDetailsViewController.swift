@@ -20,6 +20,7 @@ class ChoreDetailsViewController: UIViewController {
         static let nameTextFieldPlaceholder = "name"
         static let pointsLabelTitle = "Points:"
         static let pointsTextFieldPlaceholder = "200"
+        static let marginBetweenElements = 12.0
     }
 
     override func viewDidLoad() {
@@ -80,32 +81,32 @@ class ChoreDetailsViewController: UIViewController {
         view.layoutMargins = UIEdgeInsetsMake(44.0 + 20.0 + 16.0, 12.0, 16.0, 12.0)
         // Snapkit doesn't support layout margins? Or doesn't support top properly?
 
-        nameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(view.snp.topMargin).offset(64 + 12)
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.topMargin).offset(64 + Constants.marginBetweenElements)
             make.leading.equalTo(view.snp.leadingMargin)
             make.trailing.equalTo(view.snp.trailingMargin)
         }
 
         nameTextField.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottomMargin).offset(12)
+            make.top.equalTo(nameLabel.snp.bottomMargin).offset(Constants.marginBetweenElements)
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
         }
 
         pointsLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottomMargin).offset(12)
+            make.top.equalTo(nameTextField.snp.bottomMargin).offset(Constants.marginBetweenElements)
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
         }
 
         pointsTextField.snp.makeConstraints { make in
-            make.top.equalTo(pointsLabel.snp.bottomMargin).offset(12)
+            make.top.equalTo(pointsLabel.snp.bottomMargin).offset(Constants.marginBetweenElements)
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
         }
 
         addButton.snp.makeConstraints { make in
-            make.top.equalTo(pointsTextField.snp.bottomMargin).offset(12)
+            make.top.equalTo(pointsTextField.snp.bottomMargin).offset(Constants.marginBetweenElements)
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
         }
