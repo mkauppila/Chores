@@ -9,7 +9,7 @@
 import Foundation
 
 struct ChoreItem {
-    let id: Int
+    let id: UniqueId
     let name: String
     let points: Int
     let completed: Bool
