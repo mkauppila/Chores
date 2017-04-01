@@ -21,7 +21,7 @@ class ChoresListNavigator {
     }
 
     private func createChoresList() -> ChoresListViewController {
-        let choresListInteractor = ChoresListInteractor()
+        let choresListInteractor = ChoresListInteractor(withChoreItemStore: rootNavigator.services.choreItemStore)
         let choresListPresenter = ChoresListPresenter()
         let viewController = ChoresListViewController()
 

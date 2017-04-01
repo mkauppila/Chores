@@ -19,7 +19,7 @@ class ChoreDetailsNavigator {
         let viewController = ChoreDetailsViewController()
 
         let presenter = ChoreDetailsPresenter(viewController: viewController)
-        let interactor = ChoreDetailsInteractor()
+        let interactor = ChoreDetailsInteractor(withChoreItemStore: rootNavigator.services.choreItemStore)
 
         viewController.presenter = presenter
 

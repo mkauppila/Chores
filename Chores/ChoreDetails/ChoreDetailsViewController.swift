@@ -115,7 +115,7 @@ class ChoreDetailsViewController: UIViewController {
     // MARK: UI Actions
 
     @objc private func addChoreItemAction(sender: Any) {
-        presenter?.addChoreItem(named: "hello", points: "akk")
+        presenter?.addChoreItem(named: "hello", points: "200")
     }
 }
 

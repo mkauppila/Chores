@@ -35,6 +35,11 @@ class ChoresListViewController: UITableViewController {
         enableAutoResizingCellsFor(tableView: tableView)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     private func enableAutoResizingCellsFor(tableView: UITableView) {
          //http://candycode.io/automatically-resizing-uitableviewcells-with-dynamic-text-height-using-auto-layout/
         tableView.estimatedRowHeight = 132.0

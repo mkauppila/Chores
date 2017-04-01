@@ -9,7 +9,7 @@
 import Foundation
 
 class ChoreDetailsPresenter {
-    var viewController: ChoreDetailsViewController
+    let viewController: ChoreDetailsViewController
     var interactor: ChoreDetailsInteractor?
     var navigator: ChoreDetailsNavigator?
 
@@ -17,10 +17,11 @@ class ChoreDetailsPresenter {
         self.viewController = viewController
     }
 
-    func addChoreItem(named: String, points pointsString: String) {
+    func addChoreItem(named name: String, points pointsString: String) {
         if let points = Int(pointsString) {
-            interactor?.addChoreItem(named: named, points: points)
+            interactor?.addChoreItem(named: name, points: points)
         } else {
+            print("it failed :(")
             // TODO:
             // do some error handling, or don't let user to input anything else
             // than integers
