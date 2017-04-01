@@ -24,9 +24,9 @@
 		477CE0831E90139600063060 /* Nimble.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 477CE07B1E900C3B00063060 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477CE0841E90144E00063060 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477CE07C1E900C3B00063060 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477CE0851E90145500063060 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477CE07B1E900C3B00063060 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		477CE0861E90147400063060 /* ChoreItemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A5247CD1C44A9F11DD010 /* ChoreItemStoreSpec.swift */; };
 		477CE0891E90149400063060 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477CE07B1E900C3B00063060 /* Nimble.framework */; };
 		477CE08A1E90149400063060 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477CE07C1E900C3B00063060 /* Quick.framework */; };
+		477CE08C1E90249A00063060 /* ChoreItemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */; };
 		47B6B1311E472F5B00788C26 /* InstantRender.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B6B1301E472F5B00788C26 /* InstantRender.xib */; };
 		47B6B1341E477F1800788C26 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1331E477F1800788C26 /* UIColor+colors.swift */; };
 		47B6B1371E47801100788C26 /* ChoresListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1361E47801100788C26 /* ChoresListViewController.swift */; };
@@ -76,7 +76,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		332A5247CD1C44A9F11DD010 /* ChoreItemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreItemStoreSpec.swift; sourceTree = "<group>"; };
 		332A5A96A942F0C83A540FE7 /* ChoreItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreItemStore.swift; path = Stores/ChoreItemStore.swift; sourceTree = "<group>"; };
 		472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsNavigator.swift; path = ChoreDetails/ChoreDetailsNavigator.swift; sourceTree = "<group>"; };
 		472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsViewController.swift; path = ChoreDetails/ChoreDetailsViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		477CE07B1E900C3B00063060 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		477CE07C1E900C3B00063060 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		477CE0871E90148600063060 /* Chores */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chores; sourceTree = "<group>"; };
+		477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreItemStoreSpec.swift; sourceTree = "<group>"; };
 		47B6B1301E472F5B00788C26 /* InstantRender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstantRender.xib; sourceTree = "<group>"; };
 		47B6B1331E477F1800788C26 /* UIColor+colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+colors.swift"; path = "Common/UIColor+colors.swift"; sourceTree = "<group>"; };
 		47B6B1361E47801100788C26 /* ChoresListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoresListViewController.swift; path = ChoresList/ChoresListViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +193,7 @@
 		476F2BF71E3A653200CA6712 /* ChoresTests */ = {
 			isa = PBXGroup;
 			children = (
+				477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */,
 				476F2BF81E3A653200CA6712 /* ChoresTests.swift */,
 				476F2BFA1E3A653200CA6712 /* Info.plist */,
 			);
@@ -370,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				476F2BF91E3A653200CA6712 /* ChoresTests.swift in Sources */,
+				477CE08C1E90249A00063060 /* ChoreItemStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

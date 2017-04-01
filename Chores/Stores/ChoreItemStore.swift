@@ -24,6 +24,24 @@ class ChoreItemStore {
         print("chore items: \(choreItems)")
     }
 
+    func findChoreItem(byName name: String) -> ChoreItem? {
+        let byName = choreItems.filter { $0.name == name }
+        if byName.count > 1 {
+            // log a soft error?
+            return nil
+        }
+        return byName.first
+    }
+
+    func deleteChoreItem(byId id: UniqueId) -> Bool {
+        guard let index = choreItems.index(where: { $0.id == id}) else {
+            return false
+        }
+
+        choreItems.remove(at: index)
+        return true
+    }
+
     func allChoreItems() -> [ChoreItem] {
         print("chore items: \(choreItems)")
         return choreItems
