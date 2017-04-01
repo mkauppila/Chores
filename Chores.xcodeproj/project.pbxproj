@@ -18,7 +18,6 @@
 		476F2BE41E3A653200CA6712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BE31E3A653200CA6712 /* AppDelegate.swift */; };
 		476F2BEB1E3A653200CA6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEA1E3A653200CA6712 /* Assets.xcassets */; };
 		476F2BEE1E3A653200CA6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F2BEC1E3A653200CA6712 /* LaunchScreen.storyboard */; };
-		476F2BF91E3A653200CA6712 /* ChoresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F2BF81E3A653200CA6712 /* ChoresTests.swift */; };
 		476F2C0A1E3CD41000CA6712 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 476F2C071E3CD24500CA6712 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477CE0821E90139200063060 /* Quick.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 477CE07C1E900C3B00063060 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477CE0831E90139600063060 /* Nimble.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 477CE07B1E900C3B00063060 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,7 +89,6 @@
 		476F2BED1E3A653200CA6712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476F2BEF1E3A653200CA6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		476F2BF41E3A653200CA6712 /* ChoresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		476F2BF81E3A653200CA6712 /* ChoresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoresTests.swift; sourceTree = "<group>"; };
 		476F2BFA1E3A653200CA6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		476F2C071E3CD24500CA6712 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		477CE07B1E900C3B00063060 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */,
-				476F2BF81E3A653200CA6712 /* ChoresTests.swift */,
 				476F2BFA1E3A653200CA6712 /* Info.plist */,
 			);
 			path = ChoresTests;
@@ -370,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				476F2BF91E3A653200CA6712 /* ChoresTests.swift in Sources */,
 				477CE08C1E90249A00063060 /* ChoreItemStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
