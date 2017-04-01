@@ -8,28 +8,24 @@
 
 import UIKit
 
+class Services {
+    let choreItemStore = ChoreItemStore()
+}
+
 class AppDependencies {
     private let window: UIWindow
     private var choresListNavigator: ChoresListNavigator?
+
+    private let dependencies = Services()
 
     init(toWindow window: UIWindow) {
         self.window = window
     }
 
     func installRootViewControllerToWindow() {
-        let rootNavigator = RootNavigator(forWindow: window)
+        let rootNavigator = RootNavigator(forWindow: window, withServices: dependencies)
 
         choresListNavigator = ChoresListNavigator(withRootNavigator: rootNavigator)
-
         choresListNavigator?.presentFrom(window: window)
-    }
-
-    func createDependencies() {
-
-        // Chores List
-
-        // TODO: Make sure to break the circular references
-        
-
     }
 }

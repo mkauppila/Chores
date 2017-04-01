@@ -11,8 +11,11 @@ import UIKit
 class RootNavigator {
     private let window: UIWindow
 
-    init(forWindow window: UIWindow) {
+    let services: Services
+
+    init(forWindow window: UIWindow, withServices services: Services) {
         self.window = window
+        self.services = services
     }
 
     func showRoot(viewController controller: UIViewController) {

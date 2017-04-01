@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         if let window = window {
             dependencies = AppDependencies(toWindow: window)
-            dependencies.createDependencies()
             dependencies.installRootViewControllerToWindow()
         }
 
