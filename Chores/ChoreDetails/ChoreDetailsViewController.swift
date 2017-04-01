@@ -14,13 +14,13 @@ class ChoreDetailsViewController: UIViewController {
 
     enum Constants {
         static let addButtonTitle = "Add chore!"
-        static let viewTitle = NSLocalizedString("Chore details", comment: "")
-        static let viewBackgroundColor = UIColor.white
+        static let marginBetweenElements = 12.0
         static let nameLabelTitle = "Name:"
         static let nameTextFieldPlaceholder = "name"
         static let pointsLabelTitle = "Points:"
         static let pointsTextFieldPlaceholder = "200"
-        static let marginBetweenElements = 12.0
+        static let viewTitle = NSLocalizedString("Chore details", comment: "")
+        static let viewBackgroundColor = UIColor.white
     }
 
     override func viewDidLoad() {
@@ -52,6 +52,7 @@ class ChoreDetailsViewController: UIViewController {
 
     let pointsTextField: UITextField = {
         let textField = UITextField()
+        textField.keyboardType = .numberPad
         textField.placeholder = Constants.pointsTextFieldPlaceholder
         return textField
     }()
