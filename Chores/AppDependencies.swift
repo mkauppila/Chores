@@ -8,9 +8,6 @@
 
 import UIKit
 
-class Services {
-    let choreItemStore = ChoreItemStore()
-}
 
 class AppDependencies {
     private let window: UIWindow

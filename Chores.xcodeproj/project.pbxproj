@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332A5016342A7CFCA7EF11F4 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A581D6941EEEE21CC8387 /* Services.swift */; };
 		332A5A0377B4877927941147 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A5112CFC474900781365C /* FileSystem.swift */; };
 		332A5A6A1E6BBC72BABCE9BA /* ChoreItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A578671478EE06F4BD7E8 /* ChoreItemStore.swift */; };
 		472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		332A5112CFC474900781365C /* FileSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileSystem.swift; path = Services/FileSystem.swift; sourceTree = "<group>"; };
 		332A578671478EE06F4BD7E8 /* ChoreItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreItemStore.swift; path = Services/ChoreItemStore.swift; sourceTree = "<group>"; };
+		332A581D6941EEEE21CC8387 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Services.swift; path = Services/Services.swift; sourceTree = "<group>"; };
 		472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsNavigator.swift; path = ChoreDetails/ChoreDetailsNavigator.swift; sourceTree = "<group>"; };
 		472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsViewController.swift; path = ChoreDetails/ChoreDetailsViewController.swift; sourceTree = "<group>"; };
 		472D90851E52196A00951D89 /* ChoreDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsPresenter.swift; path = ChoreDetails/ChoreDetailsPresenter.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				332A578671478EE06F4BD7E8 /* ChoreItemStore.swift */,
 				332A5112CFC474900781365C /* FileSystem.swift */,
+				332A581D6941EEEE21CC8387 /* Services.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				472D90861E52196A00951D89 /* ChoreDetailsPresenter.swift in Sources */,
 				332A5A6A1E6BBC72BABCE9BA /* ChoreItemStore.swift in Sources */,
 				332A5A0377B4877927941147 /* FileSystem.swift in Sources */,
+				332A5016342A7CFCA7EF11F4 /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

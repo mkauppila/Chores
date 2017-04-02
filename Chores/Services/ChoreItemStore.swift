@@ -5,13 +5,6 @@
 
 import Foundation
 
-typealias UniqueId = UInt
-
-protocol Serialization {
-    func saveToDisk()
-    func restoreFromDisk()
-}
-
 class ChoreItemStore {
     var choreItems: [ChoreItem] = []
 

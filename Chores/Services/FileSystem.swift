@@ -5,5 +5,10 @@
 
 import Foundation
 
+protocol Serialization {
+    func saveToDisk()
+    func restoreFromDisk()
+}
+
 class FileSystem {
 }

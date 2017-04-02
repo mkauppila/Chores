@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias UniqueId = UInt
+
 struct ChoreItem {
     let id: UniqueId
     let name: String
