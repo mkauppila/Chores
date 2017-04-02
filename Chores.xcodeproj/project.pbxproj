@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332A5029012C8BB34A2F1182 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A568BFA88FFD22C88F2AF /* FileSystem.swift */; };
 		332A5E475C0231C4EEFE3797 /* ChoreItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A5A96A942F0C83A540FE7 /* ChoreItemStore.swift */; };
 		472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */; };
 		472D90841E5217E400951D89 /* ChoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		332A568BFA88FFD22C88F2AF /* FileSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileSystem.swift; path = Stores/FileSystem.swift; sourceTree = "<group>"; };
 		332A5A96A942F0C83A540FE7 /* ChoreItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreItemStore.swift; path = Stores/ChoreItemStore.swift; sourceTree = "<group>"; };
 		472D90811E50E4A500951D89 /* ChoreDetailsNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsNavigator.swift; path = ChoreDetails/ChoreDetailsNavigator.swift; sourceTree = "<group>"; };
 		472D90831E5217E400951D89 /* ChoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoreDetailsViewController.swift; path = ChoreDetails/ChoreDetailsViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				332A5A96A942F0C83A540FE7 /* ChoreItemStore.swift */,
+				332A568BFA88FFD22C88F2AF /* FileSystem.swift */,
 			);
 			name = Stores;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				472D908F1E521DD900951D89 /* RootNavigator.swift in Sources */,
 				472D90861E52196A00951D89 /* ChoreDetailsPresenter.swift in Sources */,
 				332A5E475C0231C4EEFE3797 /* ChoreItemStore.swift in Sources */,
+				332A5029012C8BB34A2F1182 /* FileSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
