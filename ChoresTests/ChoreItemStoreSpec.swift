@@ -39,9 +39,11 @@ class ChoreItemStoreSpec: QuickSpec {
                 let choreItem = choreItemStore.findChoreItem(byName: name)
 
                 expect(choreItemStore.deleteChoreItem(byId: choreItem!.id)).to(beTrue())
+            }
 
-                // trying to remove non-existing item
-                expect(choreItemStore.deleteChoreItem(byId: choreItem!.id)).to(beFalse())
+            it("is it not possible to delete non-existent items") {
+                let item = ChoreItem(id: 0, name: "name", points: 100, completed: false)
+                expect(choreItemStore.deleteChoreItem(byId: item.id)).to(beFalse())
             }
         }
     }
