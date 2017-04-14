@@ -47,9 +47,16 @@ extension ChoreItemStore: Serialization {
     }
 
     func saveToDisk() {
+        let fs = FileSystem()
+
+        fs.saveToDisk(data: nil , atPath: "here it goes")
+
+        // fileSystem.saveToDisk(choreItems, usingFileName: fileName)
+        // fileSystem.saveToDisk(choreItems, forServices: ChoreItemService.self) won't work if there's multiple different stores
     }
 
     func restoreFromDisk() {
+        // choreItems = fileSystem.restoreFromDisk(usingFileName: fileName)
     }
 }
 
