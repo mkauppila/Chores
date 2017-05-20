@@ -29,7 +29,7 @@
 		477CE08A1E90149400063060 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477CE07C1E900C3B00063060 /* Quick.framework */; };
 		477CE08C1E90249A00063060 /* ChoreItemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */; };
 		47B6B1311E472F5B00788C26 /* InstantRender.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B6B1301E472F5B00788C26 /* InstantRender.xib */; };
-		47B6B1341E477F1800788C26 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1331E477F1800788C26 /* UIColor+colors.swift */; };
+		47B6B1341E477F1800788C26 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1331E477F1800788C26 /* AppColor.swift */; };
 		47B6B1371E47801100788C26 /* ChoresListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1361E47801100788C26 /* ChoresListViewController.swift */; };
 		47B6B1391E47802800788C26 /* CompletableItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B1381E47802800788C26 /* CompletableItemTableViewCell.swift */; };
 		47B6B13D1E47804B00788C26 /* CompletionMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B6B13C1E47804B00788C26 /* CompletionMarkView.swift */; };
@@ -100,7 +100,7 @@
 		477CE0871E90148600063060 /* Chores */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chores; sourceTree = "<group>"; };
 		477CE08B1E90249A00063060 /* ChoreItemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreItemStoreSpec.swift; sourceTree = "<group>"; };
 		47B6B1301E472F5B00788C26 /* InstantRender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstantRender.xib; sourceTree = "<group>"; };
-		47B6B1331E477F1800788C26 /* UIColor+colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+colors.swift"; path = "Common/UIColor+colors.swift"; sourceTree = "<group>"; };
+		47B6B1331E477F1800788C26 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = Common/AppColor.swift; sourceTree = "<group>"; };
 		47B6B1361E47801100788C26 /* ChoresListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoresListViewController.swift; path = ChoresList/ChoresListViewController.swift; sourceTree = "<group>"; };
 		47B6B1381E47802800788C26 /* CompletableItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompletableItemTableViewCell.swift; path = ChoresList/CompletableItemTableViewCell.swift; sourceTree = "<group>"; };
 		47B6B13C1E47804B00788C26 /* CompletionMarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompletionMarkView.swift; path = ChoresList/CompletionMarkView.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		47B6B1321E477EDC00788C26 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				47B6B1331E477F1800788C26 /* UIColor+colors.swift */,
+				47B6B1331E477F1800788C26 /* AppColor.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 				472D90821E50E4A500951D89 /* ChoreDetailsNavigator.swift in Sources */,
 				472D908D1E521DB600951D89 /* AppDependencies.swift in Sources */,
 				47B6B1371E47801100788C26 /* ChoresListViewController.swift in Sources */,
-				47B6B1341E477F1800788C26 /* UIColor+colors.swift in Sources */,
+				47B6B1341E477F1800788C26 /* AppColor.swift in Sources */,
 				472D908A1E521D2900951D89 /* ChoreItem.swift in Sources */,
 				47B6B13F1E47807F00788C26 /* ChoresListPresenter.swift in Sources */,
 				47B6B1411E4780A500788C26 /* ChoresListNavigator.swift in Sources */,

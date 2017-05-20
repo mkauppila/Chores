@@ -20,7 +20,7 @@ class ChoreDetailsViewController: UIViewController {
         static let pointsLabelTitle = "Points:"
         static let pointsTextFieldPlaceholder = "200"
         static let viewTitle = NSLocalizedString("Chore details", comment: "")
-        static let viewBackgroundColor = UIColor.white
+        static let viewBackgroundColor = AppColor.white
     }
 
     override func viewDidLoad() {
@@ -119,4 +119,3 @@ class ChoreDetailsViewController: UIViewController {
         presenter?.addChoreItem(named: "hello", points: "200")
     }
 }
-

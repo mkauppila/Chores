@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class CompletionMarkView: UIView {
 
-    @IBInspectable var pathColor: UIColor = UIColor.appleGray
+    @IBInspectable var pathColor = AppColor.appleGray
     @IBInspectable var circleLineWidth: CGFloat = 2.0
     @IBInspectable var checkmarkLineWidth: CGFloat = 5.0
     @IBInspectable var completed: Bool = false
