@@ -41,25 +41,6 @@ class ChoreItemStore {
     }
 }
 
-extension ChoreItemStore: Serialization {
-    var fileName: String {
-        get { return "hello" }
-    }
-
-    func saveToDisk() {
-        let fs = FileSystem()
-
-        fs.saveToDisk(data: nil , atPath: "here it goes")
-
-        // fileSystem.saveToDisk(choreItems, usingFileName: fileName)
-        // fileSystem.saveToDisk(choreItems, forServices: ChoreItemService.self) won't work if there's multiple different stores
-    }
-
-    func restoreFromDisk() {
-        // choreItems = fileSystem.restoreFromDisk(usingFileName: fileName)
-    }
-}
-
 fileprivate extension ChoreItemStore {
     func createDefaultChoreItems() -> [ChoreItem] {
         return [
