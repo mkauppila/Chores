@@ -11,18 +11,15 @@ import UIKit
 
 class AppDependencies {
     private let window: UIWindow
-    private var choresListNavigator: ChoresListNavigator?
-
-    private let dependencies = Services()
+    private let services = Services()
 
     init(toWindow window: UIWindow) {
         self.window = window
     }
 
-    func installRootViewControllerToWindow() {
-        let rootNavigator = RootNavigator(forWindow: window, withServices: dependencies)
-
-        choresListNavigator = ChoresListNavigator(withRootNavigator: rootNavigator)
-        choresListNavigator?.presentFrom(window: window)
+    func createAndShowInitialViewController() {
+        let rootNavigator = RootNavigator(forWindow: window, withServices: services)
+        let choresListNavigator = ChoresListNavigator(withRootNavigator: rootNavigator)
+        rootNavigator.showInitial(viewController: choresListNavigator.createChoresList())
     }
 }

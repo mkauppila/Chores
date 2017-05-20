@@ -16,6 +16,10 @@ class ChoreDetailsPresenter {
     init(viewController: ChoreDetailsViewController) {
         self.viewController = viewController
     }
+}
+
+extension ChoreDetailsPresenter {
+    // MARK: UI Action Handlers
 
     func addChoreItem(named name: String, points pointsString: String) {
         if let points = Int(pointsString) {

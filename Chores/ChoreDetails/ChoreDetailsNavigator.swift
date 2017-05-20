@@ -9,30 +9,29 @@
 import UIKit
 
 class ChoreDetailsNavigator {
-    let rootNavigator: RootNavigator
+    fileprivate let rootNavigator: RootNavigator
 
-    init(rootNavigator: RootNavigator) {
+    init(withRootNavigator rootNavigator: RootNavigator) {
         self.rootNavigator = rootNavigator
     }
+}
 
-    private func wireUpChoreDetails() -> ChoreDetailsViewController {
+extension ChoreDetailsNavigator {
+    private func createChoreDetails() -> ChoreDetailsViewController {
         let viewController = ChoreDetailsViewController()
-
         let presenter = ChoreDetailsPresenter(viewController: viewController)
         let interactor = ChoreDetailsInteractor(withChoreItemStore: rootNavigator.services.choreItemStore)
 
         viewController.presenter = presenter
-
+        interactor.presenter = presenter
         presenter.navigator = self
         presenter.interactor = interactor
-
-        interactor.presenter = presenter
 
         return viewController
     }
 
     func presentChoreDetails() {
-        rootNavigator.navigateTo(viewController: wireUpChoreDetails(),
+        rootNavigator.navigateTo(viewController: createChoreDetails(),
                                  withAnimation: true)
     }
 }

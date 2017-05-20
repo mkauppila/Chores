@@ -9,9 +9,17 @@
 import Foundation
 
 class ChoresListPresenter {
-    var viewController: ChoresListViewController?
+    var viewController: ChoresListViewController
     var interactor: ChoresListInteractor?
     var navigator: ChoresListNavigator?
+
+    init(withViewController viewController: ChoresListViewController) {
+        self.viewController = viewController
+    }
+}
+
+extension ChoresListPresenter {
+    // MARK: Data Queries
 
     func itemAtIndexPath(indexPath: IndexPath) -> ChoreItem? {
         if let items = interactor?.allChoreItems(),
@@ -25,8 +33,10 @@ class ChoresListPresenter {
     func numberOfItems() -> Int {
         return interactor?.allChoreItems().count ?? 0
     }
+}
 
-    // MARK: On UI Actions
+extension ChoresListPresenter {
+    // MARK: UI Action Handlers
 
     func onOpenAddChoreView() {
         navigator?.navigateToChoreDetails()

@@ -9,35 +9,29 @@
 import UIKit
 
 class ChoresListNavigator {
-    let rootNavigator: RootNavigator
+    fileprivate let rootNavigator: RootNavigator
 
     init(withRootNavigator navigator: RootNavigator) {
         rootNavigator = navigator
     }
+}
 
-    func presentFrom(window: UIWindow) {
-        let viewController = createChoresList()
-        rootNavigator.showRoot(viewController: viewController)
-    }
-
-    private func createChoresList() -> ChoresListViewController {
-        let choresListInteractor = ChoresListInteractor(withChoreItemStore: rootNavigator.services.choreItemStore)
-        let choresListPresenter = ChoresListPresenter()
+extension ChoresListNavigator {
+    func createChoresList() -> ChoresListViewController {
         let viewController = ChoresListViewController()
+        let interactor = ChoresListInteractor(withChoreItemStore: rootNavigator.services.choreItemStore)
+        let presenter = ChoresListPresenter(withViewController:viewController)
 
-        choresListInteractor.presenter = choresListPresenter
-
-        viewController.presenter = choresListPresenter
-
-        choresListPresenter.viewController = viewController
-        choresListPresenter.interactor = choresListInteractor
-        choresListPresenter.navigator = self
+        interactor.presenter = presenter
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        presenter.navigator = self
 
         return viewController
     }
 
     func navigateToChoreDetails() {
-        let navigator = ChoreDetailsNavigator(rootNavigator: rootNavigator)
+        let navigator = ChoreDetailsNavigator(withRootNavigator: rootNavigator)
         navigator.presentChoreDetails()
     }
 }

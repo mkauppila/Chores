@@ -8,28 +8,31 @@
 
 import UIKit
 
-
 class ChoresListViewController: UITableViewController {
     var presenter: ChoresListPresenter?
 
-    let completableItemTableViewCellIdentifier = "completableItemTableViewCellIdentifier"
+    enum Constants {
+        static let viewTitle = NSLocalizedString("Chores", comment: "")
+        static let viewBackgroundColor = AppColor.white
+        static let completableItemTableViewCellIdentifier = "completableItemTableViewCellIdentifier"
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("Chores", comment: "")
-
-        view.backgroundColor = UIColor.white
+        title = Constants.viewTitle
+        view.backgroundColor = Constants.viewBackgroundColor
 
         tableView.register(CompletableItemTableViewCell.self,
-                           forCellReuseIdentifier: completableItemTableViewCellIdentifier)
+                forCellReuseIdentifier: Constants.completableItemTableViewCellIdentifier)
 
         tableView.delegate = self
         tableView.dataSource = self
 
         let addChoreButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                                                 target: self,
-                                                 action: #selector(openAddChoreView(sender:)))
+                target: self,
+                action: #selector(openAddChoreView(sender:)))
         navigationItem.rightBarButtonItem = addChoreButtonItem
 
         enableAutoResizingCellsFor(tableView: tableView)
@@ -41,19 +44,21 @@ class ChoresListViewController: UITableViewController {
     }
 
     private func enableAutoResizingCellsFor(tableView: UITableView) {
-         //http://candycode.io/automatically-resizing-uitableviewcells-with-dynamic-text-height-using-auto-layout/
+        //http://candycode.io/automatically-resizing-uitableviewcells-with-dynamic-text-height-using-auto-layout/
         tableView.estimatedRowHeight = 132.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.setNeedsLayout()
         tableView.layoutIfNeeded()
     }
+}
 
+extension ChoresListViewController {
     // MARK: UITableViewDelegate and UITableViewDataSource
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: completableItemTableViewCellIdentifier,
-                                                    for: indexPath) as? CompletableItemTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.completableItemTableViewCellIdentifier,
+                for: indexPath) as? CompletableItemTableViewCell {
             if let item = presenter?.itemAtIndexPath(indexPath: indexPath) {
                 cell.setup(withItem: item)
                 cell.accessoryTapAction = {
@@ -73,20 +78,22 @@ class ChoresListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openChoreDetailsView()
     }
+}
 
+fileprivate extension ChoresListViewController {
     // MARK: UI Actions
 
-    @objc private func openAddChoreView(sender: Any) {
+    @objc func openAddChoreView(sender: Any) {
         print("Open add new chore item")
         presenter?.onOpenAddChoreView()
     }
 
-    private func markChoreItemCompleted(/*this item*/) {
+    func markChoreItemCompleted(/*this item*/) {
         print("mark chore item completed")
         presenter?.onMarkChoreItemCompleted()
     }
 
-    private func openChoreDetailsView() {
+    func openChoreDetailsView() {
         print("Open details view for chore item")
         presenter?.onOpenChoreDetailsView()
     }

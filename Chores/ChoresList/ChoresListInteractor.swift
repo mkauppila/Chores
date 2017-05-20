@@ -6,7 +6,7 @@
 //  Copyright © 2017 Markus Kauppila. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ChoresListInteractor {
     weak var presenter: ChoresListPresenter?

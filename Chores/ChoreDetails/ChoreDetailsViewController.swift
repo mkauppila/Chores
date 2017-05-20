@@ -61,12 +61,12 @@ class ChoreDetailsViewController: UIViewController {
         let button = UIButton(type: .roundedRect)
         button.setTitle(Constants.addButtonTitle, for: .normal)
         button.addTarget(self,
-                         action: #selector(addChoreItemAction(sender:)),
-                         for: .touchUpInside)
+                action: #selector(addChoreItemAction(sender:)),
+                for: .touchUpInside)
         return button
     }()
 
-    func setupView() {
+    private func setupView() {
         title = Constants.viewTitle
         view.backgroundColor = Constants.viewBackgroundColor
 
@@ -77,7 +77,7 @@ class ChoreDetailsViewController: UIViewController {
         view.addSubview(addButton)
     }
 
-    func setupViewLayout() {
+    private func setupViewLayout() {
         // This should probably be generalized into a base view controller??
         view.layoutMargins = UIEdgeInsetsMake(44.0 + 20.0 + 16.0, 12.0, 16.0, 12.0)
         // Snapkit doesn't support layout margins? Or doesn't support top properly?
@@ -112,10 +112,12 @@ class ChoreDetailsViewController: UIViewController {
             make.trailing.equalTo(nameLabel)
         }
     }
+}
 
+fileprivate extension ChoreDetailsViewController {
     // MARK: UI Actions
 
-    @objc private func addChoreItemAction(sender: Any) {
+    @objc func addChoreItemAction(sender: Any) {
         presenter?.addChoreItem(named: "hello", points: "200")
     }
 }

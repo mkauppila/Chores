@@ -18,7 +18,7 @@ class RootNavigator {
         self.services = services
     }
 
-    func showRoot(viewController controller: UIViewController) {
+    func showInitial(viewController controller: UIViewController) {
         let navigationController = UINavigationController(rootViewController: controller)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
